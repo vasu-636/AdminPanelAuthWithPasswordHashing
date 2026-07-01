@@ -23,9 +23,7 @@ const signInController = (req, res, next) => {
             if (loginErr) {
                 console.error('Login error', loginErr);
             }
-
-            res.cookie('userId', user._id.toString(), { httpOnly: true });
-            console.log('Login successful, cookie set for user:', user._id.toString());
+            req.user = user;
             return res.redirect('/pages/dashboard');
         });
     })(req, res, next);

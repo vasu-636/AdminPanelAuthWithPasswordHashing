@@ -13,8 +13,16 @@ const userSchema = mongoose.Schema({
     password : {
         type: String,
         required : true
+    },
+    phoneNumber: {
+        type: String,
+    },
+    bio: {
+        type: String,
+    },
+    profileImage: {
+        type: String,
     }
-    
 })
 
 module.exports = mongoose.model("User", userSchema);
